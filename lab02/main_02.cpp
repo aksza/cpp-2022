@@ -14,7 +14,7 @@ int main(int argc, char** argv) {
     cout<<"pp1( "<<pp1->getX()<<","<<pp1->getY()<<")"<<endl;
     cout<<"pp2( "<<pp2->getX()<<","<<pp2->getY()<<")"<<endl;
     pp2->print();
-    cout<<endl << "DISTANCE: "<< distance(pp1,pp2)<<endl;
+    cout<<endl << "DISTANCE: "<< distance(p1,p2)<<endl;
 //    Point p3(10,20);
 //    Point p4(20,20);
 //    Point p5(20,10);
@@ -24,13 +24,33 @@ int main(int argc, char** argv) {
 //    } else{
 //        cout<<"NO";
 //    }
-    testIsSquare("pontok.txt");
+//    testIsSquare("pontok.txt");
     delete pp1;
     delete pp2;
+    //7
     int n;
     cout<< "ADD MEG HANY SZAMBOL ALLJON A TOMB: \n";
     cin >> n;
     auto *points = new Point[n];
-
+    points = createArray(n);
+    //8
+    printArray(points,n);
+    //9.
+    pair<Point,Point> pair1 = closestPoints(points,n);
+    cout<<"CLOSEST POINTS:\n("<<pair1.first.getX()<<", "<<pair1.first.getY()<<")-"<<"("<<pair1.second.getX()<<", "<<pair1.second.getY()<<")\n";
+    //10
+    pair<Point,Point> pair2 = farthestPoints(points,n);
+    cout<<"FARTHEST POINTS:\n("<<pair2.first.getX()<<", "<<pair2.first.getY()<<")-"<<"("<<pair2.second.getX()<<", "<<pair2.second.getY()<<")\n";
+    //11
+    sortPoints(points, n);
+    cout<<"THE ARRAY AFTER SORTING:\n";
+    printArray(points,n);
+    //12
+    cout<<"THE ARRAY'S 10 FARTEST POINTS\n";
+    Point *p = farthestPointsFromOrigin(points,n);
+    printArray(p,10);
+    //13
+    deletePoints(p);
+    deletePoints(points);
     return 0;
 }

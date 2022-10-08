@@ -9,7 +9,7 @@
 #include <iostream>
 using namespace std;
 
-class Point{
+class Point : public error_code {
 private:
     int x,y;
 public:
