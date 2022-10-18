@@ -1,17 +1,18 @@
 //
-// Created by Aksza on 10/5/2022.
+// Created by Aksza on 10/16/2022.
 //
 
 #ifndef CPP_2022_LIST_H
 #define CPP_2022_LIST_H
 
+#include <iostream>
+
+using namespace std;
+
 class List {
 public:
 /* creates an empty list */
     List();
-
-    List(int nodeCounter);
-
 /* destroys this list */
     ~List();
 /* returns true if d is in the list - complexity: O(n) */
